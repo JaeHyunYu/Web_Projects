@@ -34,6 +34,7 @@ body {
 .sites img {
   background-color: white;
   width: 70%;
+  max-height: 100%;
 }
 
 .imgbox {
