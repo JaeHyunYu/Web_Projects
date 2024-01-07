@@ -5,6 +5,8 @@ import './App.css';
 
 function App() {
   let imgurl="study.png"
+  let bjurl="baekjoon.png"
+  let giturl="git.png"
   return (
   
     <div className="App">
@@ -14,10 +16,13 @@ function App() {
         <img src={imgurl} style={{width:40, backgroundColor:'black'}}></img> &nbsp; Self_Development
       </div>
       <div>
-        <a href="https://www.acmicpc.net/" target="_blank">백준 알고리즘</a>
+
+      
+        <a href="https://www.acmicpc.net/" target="_blank"><img src={bjurl}></img>백준 알고리즘</a>
       </div>
       <div>      
-        <a href="https://github.com/JaeHyunYu" target="_blank">깃허브</a>
+      
+        <a href="https://github.com/JaeHyunYu" target="_blank">  <img src={giturl}></img>깃허브</a>
       </div>
     </div>
   );
