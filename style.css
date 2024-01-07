@@ -24,7 +24,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
+  width: 50vw;
+  height: 50vh;
 }
 .sites p {
   text-align: center;
@@ -32,11 +33,11 @@ body {
 }
 .sites img {
   background-color: white;
-  width: 33vw;
+  width: 70%;
 }
 
 .imgbox {
-  height: 33vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
