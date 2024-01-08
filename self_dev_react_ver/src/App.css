@@ -1,30 +1,45 @@
-
-
 body {
-  font-family: 'nanumsquare';
-  background-color: darkgray;
+  font-family: "nanumsquare";
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
-.black-nav{
+.black-nav {
   background-color: black;
-  width: 100%;
   display: flex;
   color: white;
   padding: 20px;
   font-weight: 600;
   font-size: 20px;
 }
-
-.list{
-  margin-top: 30px;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 20px
-  
-  ;
+.sites {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
+}
+.sites p {
+  text-align: center;
+  color: black;
+}
+.sites img {
+  background-color: white;
+  width: 70%;
+  max-height: 100%;
+}
 
-
-.App-link {
-  color: #61dafb;
+.imgbox {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
