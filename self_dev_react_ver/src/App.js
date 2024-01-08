@@ -2,11 +2,32 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+const root = document.getElementById("root");
+function Test1() {
+  return (
+    <div>
+      <h1>test1</h1>;
+    </div>
+  );
+}
+
+function Test2() {
+  return (
+    <div>
+      <h1>test2</h1>;
+    </div>
+  );
+}
+
 function App() {
+  const [index, setIndex] = React.useState("0");
   let imgurl = "study.png";
   let bjurl = "baekjoon.png";
   let giturl = "git.png";
   let blogurl = "blog.png";
+  const onSelect = (event) => {
+    setIndex(event.target.value);
+  };
   return (
     <div className="App">
       <div className="black-nav">
@@ -40,6 +61,13 @@ function App() {
           </a>
         </div>
       </div>
+
+      <select value={index} onChange={onSelect}>
+        <option value="0">test1</option>
+        <option value="1">test2</option>
+      </select>
+      {index === "0" ? <Test1 /> : null}
+      {index === "1" ? <Test2 /> : null}
     </div>
   );
 }
