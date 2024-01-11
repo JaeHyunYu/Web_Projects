@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-https://webcache.googleusercontent.com/search?q=cache:1ve9xYJ-GAUJ:https://travie.tistory.com/entry/%25EC%2599%25B8%25EB%25B6%2580-%25EC%25B0%25B8%25EA%25B3%25A0%25EA%25B8%2580%25EC%259D%2598-URL-%25EC%259D%2598-OG-%25ED%2583%259C%25EA%25B7%25B8-%25EC%25A0%2595%25EB%25B3%25B4%25EB%25A1%259C-%25EB%25B0%2598%25EC%259D%2591%25ED%2598%2595-%25EB%25AF%25B8%25EB%25A6%25AC%25EB%25B3%25B4%25EA%25B8%25B0%25EB%25A5%25BC-%25EC%2583%259D%25EC%2584%25B1%25ED%2595%2598%25EB%258A%2594-PHP-%25EC%25BD%2594%25EB%2593%259C&hl=ko&gl=kr
-참고
-open-graph-scraper 사용하면 될듯
 const root = document.getElementById("root");
 function Test1() {
   return (
@@ -22,7 +19,33 @@ function Test2() {
   );
 }
 
+function Test3() {
+  const [data, newData] = useState(null);
+
+  useEffect(() => {
+    fetch("test.php")
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        newData(response);
+      });
+  }, []);
+
+  return <div>{data ? data : "No data yet..."}</div>;
+}
+
 function App() {
+  /*
+  const ogs = require("open-graph-scraper");
+  const options = { url: "http://ogp.me/" };
+  ogs(options).then((data) => {
+    const { error, html, result, response } = data;
+    console.log("error:", error); // This returns true or false. True if there was an error. The error itself is inside the result object.
+    console.log("html:", html); // This contains the HTML of page
+    console.log("result:", result); // This contains all of the Open Graph results
+    console.log("response:", response); // This contains response from the Fetch API
+  });*/
+
   const [index, setIndex] = React.useState("0");
   let imgurl = "study.png";
   let bjurl = "baekjoon.png";
@@ -71,6 +94,7 @@ function App() {
       </select>
       {index === "0" ? <Test1 /> : null}
       {index === "1" ? <Test2 /> : null}
+      <Test3 />
 
       <a href="https://yu-dev-record.tistory.com/" target="_blank">
         <p>
