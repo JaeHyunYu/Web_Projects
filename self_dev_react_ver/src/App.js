@@ -68,6 +68,13 @@ function App() {
       </select>
       {index === "0" ? <Test1 /> : null}
       {index === "1" ? <Test2 /> : null}
+
+      <a href="https://yu-dev-record.tistory.com/" target="_blank">
+        <p>
+          site : https://yu-dev-record.tistory.com/ 미리보기보여주기위해선 og
+          tag scrapper api를 이용해야 할듯!
+        </p>
+      </a>
     </div>
   );
 }
