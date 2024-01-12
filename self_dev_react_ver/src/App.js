@@ -34,18 +34,21 @@ function Test3() {
   return <div>{data ? data : "No data yet..."}</div>;
 }
 
-function App() {
-  /*
-  const ogs = require("open-graph-scraper");
-  const options = { url: "http://ogp.me/" };
-  ogs(options).then((data) => {
-    const { error, html, result, response } = data;
-    console.log("error:", error); // This returns true or false. True if there was an error. The error itself is inside the result object.
-    console.log("html:", html); // This contains the HTML of page
-    console.log("result:", result); // This contains all of the Open Graph results
-    console.log("response:", response); // This contains response from the Fetch API
-  });*/
+function Sitebox({ text, imgurl, url }) {
+  // props 재사용가능용으로 만듬
+  return (
+    <div className="item">
+      <a href={url} target="_blank">
+        <div className="imgbox">
+          <img src={imgurl}></img>
+        </div>
+        <p>{text}</p>
+      </a>
+    </div>
+  );
+}
 
+function App() {
   const [index, setIndex] = React.useState("0");
   let imgurl = "study.png";
   let bjurl = "baekjoon.png";
@@ -62,6 +65,12 @@ function App() {
       </div>
 
       <div className="sites">
+        <Sitebox
+          text="Algorithm"
+          imgurl={bjurl}
+          url="https://www.acmicpc.net/"
+        />
+        {/* Sitebox props 안쓸 경우 코드 이렇게 작성해야함
         <div className="item">
           <a href="https://www.acmicpc.net/" target="_blank">
             <div className="imgbox">
@@ -70,22 +79,18 @@ function App() {
             <p>Algorithm</p>
           </a>
         </div>
-        <div className="item">
-          <a href="https://github.com/JaeHyunYu" target="_blank">
-            <div className="imgbox">
-              <img src={giturl}></img>
-            </div>
-            <p>Github</p>
-          </a>
-        </div>
-        <div className="item">
-          <a href="https://yu-dev-record.tistory.com/" target="_blank">
-            <div className="imgbox">
-              <img src={blogurl}></img>
-            </div>
-            <p>Blog</p>
-          </a>
-        </div>
+         */}
+
+        <Sitebox
+          text="Github"
+          imgurl={giturl}
+          url="https://github.com/JaeHyunYu"
+        />
+        <Sitebox
+          text="Blog"
+          imgurl={blogurl}
+          url="https://yu-dev-record.tistory.com/"
+        />
       </div>
 
       <select value={index} onChange={onSelect}>
