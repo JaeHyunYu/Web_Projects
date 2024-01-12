@@ -19,21 +19,6 @@ function Test2() {
   );
 }
 
-function Test3() {
-  const [data, newData] = useState(null);
-
-  useEffect(() => {
-    fetch("test.php")
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        newData(response);
-      });
-  }, []);
-
-  return <div>{data ? data : "No data yet..."}</div>;
-}
-
 function Sitebox({ text, imgurl, url }) {
   // props 재사용가능용으로 만듬
   return (
@@ -96,17 +81,15 @@ function App() {
       <select value={index} onChange={onSelect}>
         <option value="0">test1</option>
         <option value="1">test2</option>
+        <option value="2">test2</option>
       </select>
-      {index === "0" ? <Test1 /> : null}
-      {index === "1" ? <Test2 /> : null}
-      <Test3 />
-
-      <a href="https://yu-dev-record.tistory.com/" target="_blank">
-        <p>
-          site : https://yu-dev-record.tistory.com/ 미리보기보여주기위해선 og
-          tag scrapper api를 이용해야 할듯!
-        </p>
-      </a>
+      {index === "0" ? <p>{bjurl}</p> : null}
+      {index === "1" ? <p>{giturl}</p> : null}
+      {index === "2" ? <p>{blogurl}</p> : null}
+      <p>
+        url 미리보기보여주기위해선 og tag scrapper api를 이용해야 할듯! (추후
+        개발 예정)
+      </p>
     </div>
   );
 }
