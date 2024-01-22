@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const root = document.getElementById("root");
-
+let bjurl = "baekjoon.png";
+let giturl = "git.png";
+let blogurl = "blog.png";
 function Sitebox({ text, imgurl, url }) {
   // props 재사용가능용으로 만듬
   return (
@@ -15,23 +17,9 @@ function Sitebox({ text, imgurl, url }) {
     </div>
   );
 }
-
-function Home() {
-  const [index, setIndex] = React.useState("0");
-  let imgurl = "study.png";
-  let bjurl = "baekjoon.png";
-  let giturl = "git.png";
-  let blogurl = "blog.png";
-  const onSelect = (event) => {
-    setIndex(event.target.value);
-  };
+function IT_dev() {
   return (
-    <div className="App">
-      <div className="black-nav">
-        <img src={imgurl} style={{ width: 40 }}></img>
-        Self_Development
-      </div>
-
+    <div>
       <div className="sites">
         <Sitebox
           text="Algorithm"
@@ -60,6 +48,73 @@ function Home() {
           url="https://yu-dev-record.tistory.com/"
         />
       </div>
+    </div>
+  );
+}
+
+function Eng_dev() {
+  return (
+    <div>
+      <div className="sites">
+        <Sitebox text="writing9" imgurl={bjurl} url="https://writing9.com/" />
+        {/* Sitebox props 안쓸 경우 코드 이렇게 작성해야함
+        <div className="item">
+          <a href="https://www.acmicpc.net/" target="_blank">
+            <div className="imgbox">
+              <img src={bjurl}></img>
+            </div>
+            <p>Algorithm</p>
+          </a>
+        </div>
+         */}
+
+        <Sitebox
+          text="GoHackers"
+          imgurl={giturl}
+          url="https://www.gohackers.com/?c=ielts/ielts_info2/ielts_writing"
+        />
+        <Sitebox
+          text="ChatGPT"
+          imgurl={blogurl}
+          url="https://chat.openai.com/"
+        />
+      </div>
+    </div>
+  );
+}
+function Home() {
+  let imgurl = "study.png";
+  const [index, setIndex] = React.useState("0");
+  const [content, setContent] = React.useState("0");
+
+  const onSelect = (event) => {
+    setIndex(event.target.value);
+  };
+  const handleButton = (event) => {
+    setContent(event.target);
+  };
+  return (
+    <div className="App">
+      <div className="black-nav">
+        <img src={imgurl} style={{ width: 40 }}></img>
+        Self_Development
+      </div>
+      <button
+        onClick={() => {
+          setContent(0);
+        }}
+      >
+        Dev_Study
+      </button>
+      <button
+        onClick={() => {
+          setContent(1);
+        }}
+      >
+        Eng_Study
+      </button>
+      {content}
+      <div>{content == 0 ? <IT_dev /> : <Eng_dev />}</div>
 
       <select value={index} onChange={onSelect}>
         <option value="0">test1</option>
