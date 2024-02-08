@@ -82,6 +82,26 @@ function Eng_dev() {
     </div>
   );
 }
+function Employ() {
+  return (
+    <div>
+      <div className="sites">
+        <Sitebox text="자소설닷컴" imgurl={bjurl} url="https://jasoseol.com/" />
+
+        <Sitebox
+          text="인쿠르트"
+          imgurl={giturl}
+          url="https://www.incruit.com/?utm_source=google&utm_medium=cpc&utm_campaign=paid_keyword_google_pc&utm_term=%EC%9D%B8%ED%81%AC%EB%A3%A8%ED%8A%B8&gad_source=1&gclid=CjwKCAiAlJKuBhAdEiwAnZb7ldH0g5zcWlIhXvPU_bx6kIrS34ZpBFlXAzh8KT42UpEpSAZRdVjimBoC6wgQAvD_BwE"
+        />
+        <Sitebox
+          text="잡플레닛"
+          imgurl={blogurl}
+          url="https://www.jobplanet.co.kr/job"
+        />
+      </div>
+    </div>
+  );
+}
 function Home() {
   let imgurl = "study.png";
   const [index, setIndex] = React.useState("0");
@@ -113,8 +133,18 @@ function Home() {
       >
         Eng_Study
       </button>
+      <button
+        onClick={() => {
+          setContent(2);
+        }}
+      >
+        Employ
+      </button>
+
       {content}
-      <div>{content == 0 ? <IT_dev /> : <Eng_dev />}</div>
+      <div>
+        {content == 0 ? <IT_dev /> : content == 1 ? <Eng_dev /> : <Employ />}
+      </div>
 
       <select value={index} onChange={onSelect}>
         <option value="0">test1</option>
