@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Route, Router } from "react-router-dom";
+import { Routes, Route, Router, Link } from "react-router-dom";
 const root = document.getElementById("root");
 let bjurl = "baekjoon.png";
 let giturl = "git.png";
@@ -119,11 +119,9 @@ function Home() {
       <div className="black-nav">
         <img src={imgurl} style={{ width: 40 }}></img>
         Self_Development
-        {
-          <Link className="navbarMenu" to={"/Dev"}>
-            Dev
-          </Link>
-        }
+        <Link className="navbarMenu" to={"/Dev"}>
+          <button>Dev</button>
+        </Link>
       </div>
 
       <div>
