@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Route, Router } from "react-router-dom";
+
 const root = document.getElementById("root");
 let bjurl = "baekjoon.png";
 let giturl = "git.png";
@@ -83,27 +83,8 @@ function Eng_dev() {
     </div>
   );
 }
-function Employ() {
-  return (
-    <div>
-      <div className="sites">
-        <Sitebox text="자소설닷컴" imgurl={bjurl} url="https://jasoseol.com/" />
 
-        <Sitebox
-          text="인쿠르트"
-          imgurl={giturl}
-          url="https://www.incruit.com/?utm_source=google&utm_medium=cpc&utm_campaign=paid_keyword_google_pc&utm_term=%EC%9D%B8%ED%81%AC%EB%A3%A8%ED%8A%B8&gad_source=1&gclid=CjwKCAiAlJKuBhAdEiwAnZb7ldH0g5zcWlIhXvPU_bx6kIrS34ZpBFlXAzh8KT42UpEpSAZRdVjimBoC6wgQAvD_BwE"
-        />
-        <Sitebox
-          text="잡플레닛"
-          imgurl={blogurl}
-          url="https://www.jobplanet.co.kr/job"
-        />
-      </div>
-    </div>
-  );
-}
-function Home() {
+function Employ() {
   let imgurl = "study.png";
   const [index, setIndex] = React.useState("0");
   const [content, setContent] = React.useState("0");
@@ -119,30 +100,6 @@ function Home() {
       <div className="black-nav">
         <img src={imgurl} style={{ width: 40 }}></img>
         Self_Development
-        {
-          <Link className="navbarMenu" to={"/Dev"}>
-            Dev
-          </Link>
-        }
-      </div>
-
-      <div>
-        {content == 0 ? <IT_dev /> : content == 1 ? <Eng_dev /> : <Employ />}
-      </div>
-      <div>
-        <select value={index} onChange={onSelect}>
-          <option value="0">test1</option>
-          <option value="1">test2</option>
-          <option value="2">test3</option>
-        </select>
-        {index === "0" ? <p>{bjurl}</p> : null}
-        {index === "1" ? <p>{giturl}</p> : null}
-        {index === "2" ? <p>{blogurl}</p> : null}
-        <p>
-          url 미리보기보여주기위해선 og tag scrapper api를 이용해야 할듯! (추후
-          개발 예정)
-        </p>
-
         <div className="buttons" style={{ display: "flex" }}>
           <button
             onClick={() => {
@@ -165,11 +122,25 @@ function Home() {
           >
             Employ
           </button>
-          {content}
         </div>
       </div>
+
+      {content}
+
+      <select value={index} onChange={onSelect}>
+        <option value="0">test1</option>
+        <option value="1">test2</option>
+        <option value="2">test2</option>
+      </select>
+      {index === "0" ? <p>{bjurl}</p> : null}
+      {index === "1" ? <p>{giturl}</p> : null}
+      {index === "2" ? <p>{blogurl}</p> : null}
+      <p>
+        url 미리보기보여주기위해선 og tag scrapper api를 이용해야 할듯! (추후
+        개발 예정)
+      </p>
     </div>
   );
 }
 
-export default Home;
+export default Employ;

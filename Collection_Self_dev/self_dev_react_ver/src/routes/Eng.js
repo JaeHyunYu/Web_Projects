@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Route, Router } from "react-router-dom";
+
 const root = document.getElementById("root");
 let bjurl = "baekjoon.png";
 let giturl = "git.png";
@@ -103,7 +103,7 @@ function Employ() {
     </div>
   );
 }
-function Home() {
+function Eng() {
   let imgurl = "study.png";
   const [index, setIndex] = React.useState("0");
   const [content, setContent] = React.useState("0");
@@ -119,30 +119,6 @@ function Home() {
       <div className="black-nav">
         <img src={imgurl} style={{ width: 40 }}></img>
         Self_Development
-        {
-          <Link className="navbarMenu" to={"/Dev"}>
-            Dev
-          </Link>
-        }
-      </div>
-
-      <div>
-        {content == 0 ? <IT_dev /> : content == 1 ? <Eng_dev /> : <Employ />}
-      </div>
-      <div>
-        <select value={index} onChange={onSelect}>
-          <option value="0">test1</option>
-          <option value="1">test2</option>
-          <option value="2">test3</option>
-        </select>
-        {index === "0" ? <p>{bjurl}</p> : null}
-        {index === "1" ? <p>{giturl}</p> : null}
-        {index === "2" ? <p>{blogurl}</p> : null}
-        <p>
-          url 미리보기보여주기위해선 og tag scrapper api를 이용해야 할듯! (추후
-          개발 예정)
-        </p>
-
         <div className="buttons" style={{ display: "flex" }}>
           <button
             onClick={() => {
@@ -165,11 +141,28 @@ function Home() {
           >
             Employ
           </button>
-          {content}
         </div>
       </div>
+
+      {content}
+      <div>
+        {content == 0 ? <IT_dev /> : content == 1 ? <Eng_dev /> : <Employ />}
+      </div>
+
+      <select value={index} onChange={onSelect}>
+        <option value="0">test1</option>
+        <option value="1">test2</option>
+        <option value="2">test2</option>
+      </select>
+      {index === "0" ? <p>{bjurl}</p> : null}
+      {index === "1" ? <p>{giturl}</p> : null}
+      {index === "2" ? <p>{blogurl}</p> : null}
+      <p>
+        url 미리보기보여주기위해선 og tag scrapper api를 이용해야 할듯! (추후
+        개발 예정)
+      </p>
     </div>
   );
 }
 
-export default Home;
+export default Eng;
