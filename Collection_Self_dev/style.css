@@ -1,0 +1,45 @@
+body {
+  font-family: "nanumsquare";
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.black-nav {
+  background-color: black;
+  display: flex;
+  color: white;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.sites {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
+}
+.sites p {
+  text-align: center;
+  color: black;
+}
+.sites img {
+  background-color: white;
+  width: 70%;
+  max-height: 100%;
+}
+
+.imgbox {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
