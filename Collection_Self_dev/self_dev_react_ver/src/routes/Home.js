@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Router, Link } from "react-router-dom";
-const root = document.getElementById("root");
+import { Link } from "react-router-dom";
 let bjurl = "baekjoon.png";
 let giturl = "git.png";
 let blogurl = "blog.png";
@@ -117,8 +116,17 @@ function Home() {
   return (
     <div className="App">
       <div className="black-nav">
-        <img src={imgurl} style={{ width: 40 }}></img>
-        Self_Development
+        <Link
+          className="navbarMain"
+          to={"/"}
+          style={{
+            textDecoration: "none",
+            color: "white",
+          }}
+        >
+          <img src={imgurl} style={{ width: 40 }}></img>
+          Self_Development
+        </Link>
         <Link className="navbarMenu" to={"/Dev"}>
           <button>Dev</button>
         </Link>

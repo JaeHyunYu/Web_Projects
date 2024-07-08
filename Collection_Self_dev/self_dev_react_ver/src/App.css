@@ -11,6 +11,8 @@ body {
   padding: 20px;
   font-weight: 600;
   font-size: 20px;
+  justify-content: space-between;
+  /*navbar 각 메뉴들을 떨어질 수 있도록*/
 }
 
 .sites {
