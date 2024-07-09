@@ -4,7 +4,7 @@ let bjurl = "baekjoon.png";
 let giturl = "git.png";
 let blogurl = "blog.png";
 
-function Sitebox({ text, imgurl, url }) {
+export function Sitebox({ text, imgurl, url }) {
   // props 재사용가능용으로 만듬
   return (
     <div className="item">
@@ -82,39 +82,10 @@ function Eng_dev() {
     </div>
   );
 }
-function Employ() {
+export function Nav() {
+  let imgurl = "study.png";
   return (
     <div>
-      <div className="sites">
-        <Sitebox text="자소설닷컴" imgurl={bjurl} url="https://jasoseol.com/" />
-
-        <Sitebox
-          text="인쿠르트"
-          imgurl={giturl}
-          url="https://www.incruit.com/?utm_source=google&utm_medium=cpc&utm_campaign=paid_keyword_google_pc&utm_term=%EC%9D%B8%ED%81%AC%EB%A3%A8%ED%8A%B8&gad_source=1&gclid=CjwKCAiAlJKuBhAdEiwAnZb7ldH0g5zcWlIhXvPU_bx6kIrS34ZpBFlXAzh8KT42UpEpSAZRdVjimBoC6wgQAvD_BwE"
-        />
-        <Sitebox
-          text="잡플레닛"
-          imgurl={blogurl}
-          url="https://www.jobplanet.co.kr/job"
-        />
-      </div>
-    </div>
-  );
-}
-function Home() {
-  let imgurl = "study.png";
-  const [index, setIndex] = React.useState("0");
-  const [content, setContent] = React.useState("0");
-
-  const onSelect = (event) => {
-    setIndex(event.target.value);
-  };
-  const handleButton = (event) => {
-    setContent(event.target);
-  };
-  return (
-    <div className="App">
       <div className="black-nav">
         <Link className="navbarMenu" to={"/"}>
           <img src={imgurl} style={{ width: 40 }} alt="Hi"></img>
@@ -133,7 +104,22 @@ function Home() {
           </Link>
         </div>
       </div>
+    </div>
+  );
+}
+function Home() {
+  const [index, setIndex] = React.useState("0");
+  const [content, setContent] = React.useState("0");
 
+  const onSelect = (event) => {
+    setIndex(event.target.value);
+  };
+  const handleButton = (event) => {
+    setContent(event.target);
+  };
+  return (
+    <div className="App">
+      <Nav />
       {/* 
       <div>
         {content == 0 ? <IT_dev /> : content == 1 ? <Eng_dev /> : <Employ />}
@@ -178,6 +164,8 @@ function Home() {
         </div>
       </div>
       */}
+
+      <IT_dev />
     </div>
   );
 }

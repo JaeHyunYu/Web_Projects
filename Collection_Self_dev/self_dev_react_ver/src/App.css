@@ -9,11 +9,9 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
   height: 40px;
   font-weight: 600;
   font-size: 20px;
-
   /*navbar 각 메뉴들을 떨어질 수 있도록*/
 }
 
@@ -25,14 +23,14 @@ body {
 .navbarMenu {
   width: 30%;
   margin: 0;
-
-  flex-wrap: nowrap;
   color: white;
   text-decoration: none;
+  align-content: center;
+  text-align: center;
 }
 
 .navbarMenu:hover {
-  background-color: aqua;
+  background-color: darkgrey;
 }
 .sites {
   display: flex;
