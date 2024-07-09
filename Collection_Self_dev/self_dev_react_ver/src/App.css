@@ -6,15 +6,34 @@ body {
 }
 .black-nav {
   background-color: black;
-  display: flex;
   color: white;
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  height: 40px;
   font-weight: 600;
   font-size: 20px;
-  justify-content: space-between;
+
   /*navbar 각 메뉴들을 떨어질 수 있도록*/
 }
 
+.navbarMenus {
+  display: flex;
+  width: 30%;
+  flex-wrap: nowrap;
+}
+.navbarMenu {
+  width: 30%;
+  margin: 0;
+
+  flex-wrap: nowrap;
+  color: white;
+  text-decoration: none;
+}
+
+.navbarMenu:hover {
+  background-color: aqua;
+}
 .sites {
   display: flex;
   flex-direction: row;

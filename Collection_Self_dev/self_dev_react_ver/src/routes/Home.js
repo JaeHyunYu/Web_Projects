@@ -116,22 +116,25 @@ function Home() {
   return (
     <div className="App">
       <div className="black-nav">
-        <Link
-          className="navbarMain"
-          to={"/"}
-          style={{
-            textDecoration: "none",
-            color: "white",
-          }}
-        >
-          <img src={imgurl} style={{ width: 40 }}></img>
+        <Link className="navbarMenu" to={"/"}>
+          <img src={imgurl} style={{ width: 40 }} alt="Hi"></img>
           Self_Development
         </Link>
-        <Link className="navbarMenu" to={"/Dev"}>
-          <button>Dev</button>
-        </Link>
+
+        <div className="navbarMenus">
+          <Link className="navbarMenu" to={"/Dev"}>
+            Dev
+          </Link>
+          <Link className="navbarMenu" to={"/Eng"}>
+            Eng
+          </Link>
+          <Link className="navbarMenu" to={"/Employ"}>
+            Employ
+          </Link>
+        </div>
       </div>
 
+      {/* 
       <div>
         {content == 0 ? <IT_dev /> : content == 1 ? <Eng_dev /> : <Employ />}
       </div>
@@ -174,6 +177,7 @@ function Home() {
           {content}
         </div>
       </div>
+      */}
     </div>
   );
 }
