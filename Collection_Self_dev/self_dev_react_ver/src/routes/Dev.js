@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Sitebox, { Nav } from "./Home.js";
+import { Sitebox, Nav } from "./Home.js";
 
-const root = document.getElementById("root");
 let bjurl = "baekjoon.png";
 let giturl = "git.png";
 let blogurl = "blog.png";
@@ -14,7 +13,6 @@ function IT_dev() {
           imgurl={bjurl}
           url="https://www.acmicpc.net/"
         />
-
         <Sitebox
           text="Github"
           imgurl={giturl}
@@ -31,10 +29,9 @@ function IT_dev() {
 }
 
 function Dev() {
-  let imgurl = "study.png";
-
   return (
     <div className="App">
+      <Nav />
       <div>
         <IT_dev />
       </div>
