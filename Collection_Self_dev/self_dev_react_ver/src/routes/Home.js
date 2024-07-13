@@ -34,6 +34,9 @@ export function Nav() {
           <Link className="navbarMenu" to={"/Employ"}>
             Employ
           </Link>
+          <Link className="navbarMenu" to={"/Book"}>
+            Book
+          </Link>
         </div>
       </div>
     </div>

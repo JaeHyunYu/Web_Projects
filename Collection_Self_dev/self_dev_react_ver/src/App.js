@@ -5,6 +5,7 @@ import Home from "./routes/Home";
 import Dev from "./routes/Dev";
 import Eng from "./routes/Eng";
 import Employ from "./routes/Employ";
+import Book from "./routes/Book";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/Dev" element={<Dev />}></Route>
           <Route path="/Eng" element={<Eng />}></Route>
           <Route path="/Employ" element={<Employ />}></Route>
+          <Route path="/Book" element={<Book />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
